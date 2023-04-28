@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MessageItem } from '../message-item.interface';
 
 @Component({
   selector: 'app-message-board',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./message-board.component.sass']
 })
 export class MessageBoardComponent {
+addMessage($event: MessageItem) {
+throw new Error('Method not implemented.');
+}
+messages: any;
 
 }

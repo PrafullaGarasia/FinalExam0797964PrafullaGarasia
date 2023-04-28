@@ -1,1 +1,6 @@
-<p>message-create works!</p>
+<div>
+    <input type="number" [(ngModel)]="newMessage.ID" placeholder="ID">
+    <input type="text" [(ngModel)]="newMessage.MessageText" placeholder="Message">
+    <button (click)="createMessage()">Create</button>
+  </div>
+  

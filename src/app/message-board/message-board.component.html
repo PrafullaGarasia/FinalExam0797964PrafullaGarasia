@@ -1,1 +1,4 @@
-<p>message-board works!</p>
+<app-message-create (messageCreated)="addMessage($event)"></app-message-create>
+<div *ngFor="let message of messages">
+  <p>ID: {{ message.ID }}, Message: {{ message.MessageText }}</p>
+</div>
