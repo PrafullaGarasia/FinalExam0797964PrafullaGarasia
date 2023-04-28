@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MessageBoardComponent } from './message-board/message-board.component';
 import { MessageCreateComponent } from './message-create/message-create.component';
 import { MessageItemComponent } from './message-item/message-item.component';
+import { ClockComponent } from './clock/clock.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MessageItemComponent } from './message-item/message-item.component';
     PageNotFoundComponent,
     MessageBoardComponent,
     MessageCreateComponent,
-    MessageItemComponent
+    MessageItemComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule,
