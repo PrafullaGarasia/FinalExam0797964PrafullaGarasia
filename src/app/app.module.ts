@@ -9,6 +9,14 @@ import { MessageBoardComponent } from './message-board/message-board.component';
 import { MessageCreateComponent } from './message-create/message-create.component';
 import { MessageItemComponent } from './message-item/message-item.component';
 import { ClockComponent } from './clock/clock.component';
+import { Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/messageBoard', pathMatch: 'full' },
+  { path: 'messageBoard', component: MessageBoardComponent },
+  { path: 'clock', component: ClockComponent },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
