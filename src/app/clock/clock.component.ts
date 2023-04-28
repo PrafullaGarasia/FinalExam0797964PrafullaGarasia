@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TimeService } from '../time.service';
 
 @Component({
   selector: 'app-clock',
-  templateUrl: './clock.component.html',
-  styleUrls: ['./clock.component.sass']
+  template: '<div style="text-align:center; font-size: 2em;">{{ time }}</div>'
 })
-export class ClockComponent {
+export class ClockComponent implements OnInit {
+
+  time: string | undefined;
+
+  constructor(private timeService: TimeService) { }
+
+  ngOnInit() {
+    this.timeService.getTime().subscribe(time => {
+      this.time = time;
+    });
+  }
 
 }

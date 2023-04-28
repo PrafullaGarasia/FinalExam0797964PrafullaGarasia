@@ -5,11 +5,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TimeService {
-  getCurrentTime(): Observable<string> {
+
+  constructor() { }
+
+  getTime(): Observable<string> {
     return new Observable(observer => {
       setInterval(() => {
-        const currentTime = new Date().toLocaleString();
-        observer.next(currentTime);
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        const dateString = now.toDateString();
+        const dateTimeString = dateString + ' ' + timeString;
+        observer.next(dateTimeString);
       }, 1000);
     });
   }
