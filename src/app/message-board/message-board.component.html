@@ -1,4 +1,5 @@
-<app-message-create (messageCreated)="addMessage($event)"></app-message-create>
-<div *ngFor="let message of messages">
-  <p>ID: {{ message.ID }}, Message: {{ message.MessageText }}</p>
-</div>
+<app-message-create (messageItemCreated)="addMessageItem($event)"></app-message-create>
+
+<ul>
+  <li *ngFor="let message of messages">{{ message.ID }} - {{ message.MessageText }}</li>
+</ul>

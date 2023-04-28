@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { MessageItem } from '../message-item';
+import { MessageItem } from '../message-item.interface';
 
 @Component({
   selector: 'app-message-create',
@@ -7,12 +7,18 @@ import { MessageItem } from '../message-item';
   styleUrls: ['./message-create.component.css']
 })
 export class MessageCreateComponent {
-  @Output() messageCreated = new EventEmitter<MessageItem>();
-  newMessage: MessageItem = { ID: null, MessageText: '' };
+  @Output() messageItemCreated = new EventEmitter<MessageItem>();
+  newMessageItem: MessageItem = {
+    ID: null,
+    MessageText: ''
+  };
 
-  createMessage() {
-    this.messageCreated.emit(this.newMessage);
-    this.newMessage = { ID: null, MessageText: '' };
-    console.log('Message created successfully. ID: ' + this.newMessage.ID + ', MessageText: ' + this.newMessage.MessageText);
+  createNewMessage() {
+    this.messageItemCreated.emit(this.newMessageItem);
+    console.log(`New message created with ID ${this.newMessageItem.ID} and message text "${this.newMessageItem.MessageText}"`);
+    this.newMessageItem = {
+      ID: null,
+      MessageText: ''
+    };
   }
 }
